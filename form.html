@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Purwadhika - Form Excercise - Tracial - Travel Social</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .bg {
+            background-image: url("https://images.unsplash.com/photo-1495837174058-628aafc7d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+            background-position: center;
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+            height: 100%;
+        }
+
+        p {
+            font-size: 12px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            color: #525252;
+        }
+
+        .logo {
+            padding-bottom: 20px;
+        }
+
+        .box {
+            width: 400px;
+            margin: 0 auto 0 auto;
+            padding: 10px 0px 90px 0px;
+            position: relative;
+
+        }
+
+        .textForm {
+            background: #ecf0f1;
+            border: 0px solid;
+            padding-bottom: 14px;
+            padding-top: 14px;
+            padding-left: 23px;
+            padding-right: 23px;
+            width: 200px;
+            color: #525252;
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: 300;
+            border-radius: 999999px;
+        }
+
+        .registerButton {
+            background: #0a91ed;
+            border: 0px solid;
+            padding: 14px;
+            width: 150px;
+            color: white;
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 999999px;
+            margin-top: 30px;
+            margin-bottom: 9px;
+        }
+
+        .registerButton:hover {
+            background: #16557f;
+        }
+
+        .signIn {
+            font-size: 12px;
+            color: white;
+            position: relative;
+
+        }
+
+        .center {
+            padding-top: 100px;
+            bottom: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        #socialmedia {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="bg">
+        <div class="center">
+
+            <form onclick="return false">
+                <img src="https://i.ibb.co/T10j9Vh/logo-tracial-filo.png" width="100px" class="logo">
+                <div class="box">
+
+                    <h1 style=color:white>Join with other travelers</h1>
+                    <input class="textForm" id="username" type="text" placeholder="Username">
+                    <input class="textForm" id="email" type="email" placeholder="Email">
+                    <input class="textForm" id="password" type="password" placeholder="Password">
+                    <input class="textForm" id="passwordConfirm" type="password" placeholder="Confirm Password">
+                    <div><button class="registerButton" onclick="registerButton()">Register</button></div>
+
+
+                </div>
+
+
+                <p id="alert" style="color: white;"></p>
+
+
+
+
+                <p>or sign up with</p>
+                <div>
+                    <img src="https://i.ibb.co/zmrgbYQ/logo-social-filo.png" width="110px">
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</body>
+<script>
+    var users = [];
+
+    function registerButton() {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var passwordConfirm = document.getElementById("passwordConfirm").value;
+
+        if (password == passwordConfirm) {
+            users.push({
+                username: username,
+                email: email,
+                password: password
+            });
+            console.log(users);
+
+            document.getElementById("alert").innerHTML = "Done! Please check your email.";
+            document.getElementById("alert").style.color = "white";
+
+        } else {
+            document.getElementById("alert").innerHTML = "Error! Password doesn't machted!";
+            document.getElementById("alert").style.color = "red";
+        }
+
+    }
+</script>
+
+</html>
